@@ -33,8 +33,8 @@ After generating a wallet, update `Anchor.toml` with the path to the generated w
 ### Airdrop SOL to wallet
 
 ```bash
-$: solana address // outputs wallet pubkey
-$: solana airdrop 2 <SOLANA pubkey> // airdrop 2 SOL to address
+$: solana address # outputs wallet pubkey
+$: solana airdrop 2 <SOLANA pubkey> # airdrop 2 SOL to address
 ```
 
 ### Build program
@@ -60,12 +60,14 @@ Building the program should also generate an IDL file in `target/idl/sol_vod.jso
 }
 ```
 
+Technically the above approach is incorrect, as a missing `metadata` key in the IDL indicates something went wrong with the build. Sometimes changing Anchor versions helps solve this issue.
+
 ### Deploy program
 
 ```bash
 $: anchor deploy
 
-// alternatively, to build + test + deploy in one command
+# alternatively, to build + test + deploy in one command
 $: anchor test
 ```
 
@@ -76,9 +78,9 @@ In a seperate terminal:
 ```bash
 $: cd app/
 
-// install dependencies
+# install dependencies
 $ yarn
 
-// run app
+# run app
 $ yarn serve
 ```
